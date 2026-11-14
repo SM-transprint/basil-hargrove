@@ -261,6 +261,7 @@ blockquote footer::before { content: "— "; }
   outline: 1px solid var(--messing); outline-offset: -.6rem;
 }
 .laden { font-family: var(--notitie); font-size: .95rem; padding: 1rem 0; }
+.ml-embedded:not(:empty) + .laden { display: none; } /* formulier geladen: laadtekst weg */
 .klein { font-size: .88rem; line-height: 1.55; margin: 1rem 0 0; color: #3a3a3a; }
 .klein a { text-underline-offset: 3px; }
 .formulier-regel { color: var(--zegellak); font-size: .875rem; margin-bottom: 1.1rem; }
