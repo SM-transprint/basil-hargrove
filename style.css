@@ -262,6 +262,74 @@ blockquote footer::before { content: "— "; }
 }
 .laden { font-family: var(--notitie); font-size: .95rem; padding: 1rem 0; }
 .klein { font-size: .88rem; line-height: 1.55; margin: 1rem 0 0; color: #3a3a3a; }
+.klein a { text-underline-offset: 3px; }
+.formulier-regel { color: var(--zegellak); font-size: .875rem; margin-bottom: 1.1rem; }
+
+/* MailerLite-formulier in de stijl van 05_mailerlite/formulier/voorbeeld-formulier.png.
+   MailerLite laadt eigen CSS met #id-selectors en !important. Daarom begint elke regel
+   met #inschrijven .formulierkaart (één klasse sterker) en staat er !important bij. */
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-align-center { text-align: left !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper {
+  display: block !important; width: 100% !important; max-width: none !important;
+  background: transparent !important; border: 0 !important; padding: 0 !important; margin: 0 !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0 !important; }
+/* titel en intro staan al groot in de linkerkolom; de privacytekst staat met link onder het formulier */
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions { display: none !important; }
+
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent { margin: 0 0 .4rem !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin: 0 0 1rem !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-veldlabel {
+  display: block; margin: 0 0 .4rem; font: 400 .875rem/1.4 var(--notitie); color: var(--inkt);
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+  height: 3rem !important; padding: 0 .875rem !important; margin: 0 !important;
+  font: 400 1rem/1.4 var(--tekst) !important; color: var(--inkt) !important;
+  background: #F7F2E8 !important; border: 1px solid rgba(28, 28, 28, .55) !important; border-radius: 0 !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder { color: #6A6458 !important; opacity: 1; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus-visible { outline: 2px solid var(--messing) !important; outline-offset: 2px; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-error input { border-color: var(--zegellak) !important; }
+
+/* opt-in-vakje */
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow { float: none !important; margin: .4rem 0 1.4rem !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox { display: block !important; position: relative; padding-left: 2rem !important; margin: 0 !important; cursor: pointer; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description,
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description p {
+  font: 400 .94rem/1.5 var(--tekst) !important; color: var(--inkt) !important; margin: 0 !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before,
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+  left: -2rem !important; top: .1rem !important; width: 1.25rem !important; height: 1.25rem !important; border-radius: 0 !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+  background: #F7F2E8 !important; border: 1.5px solid var(--inkt) !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input:checked ~ .label-description::before { background: var(--inkt) !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input:checked ~ .label-description::after { background-size: 60% !important; background-position: center !important; background-repeat: no-repeat !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input:focus-visible ~ .label-description::before { outline: 2px solid var(--messing); outline-offset: 2px; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p { color: var(--zegellak) !important; }
+
+/* knop */
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { float: none !important; margin: 0 !important; width: 100% !important; }
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  display: block; width: 100% !important; height: auto !important; margin: 0 !important; padding: .95rem 0 .75rem !important;
+  background: var(--messing) !important; color: var(--inkt) !important; border: 0 !important; border-radius: 0 !important;
+  font: 400 1.625rem/1 var(--titel) !important; letter-spacing: .06em !important; text-transform: uppercase !important;
+  cursor: pointer; transition: background-color .2s ease;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: #A8813F !important; }
+
+/* bedankbericht na het inschrijven */
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+  font: 400 clamp(2.4rem, 6vw, 3.6rem)/.95 var(--titel) !important; letter-spacing: .01em !important;
+  color: var(--inkt) !important; margin: 0 0 .9rem !important;
+}
+#inschrijven .formulierkaart .ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+  font: 400 1.06rem/1.6 var(--tekst) !important; color: var(--inkt) !important;
+}
 
 /* ---------- footer ---------- */
 .voet {
