@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#EDE4D3" stroke-linejoin="round">
+  <style>
+    .ster{fill:#EDE4D3;transform-box:fill-box;transform-origin:center;animation:twinkel 5s ease-in-out infinite}
+    @keyframes twinkel{0%,100%{opacity:.15;transform:scale(.5) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+    .zwaai{transform-box:fill-box;transform-origin:center;animation:zwaai 9s ease-in-out infinite}
+    @keyframes zwaai{0%,100%{transform:rotate(-10deg)}30%{transform:rotate(14deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(6deg)}}
+    .ring{transform-box:fill-box;transform-origin:center;animation:rond 30s linear infinite}
+    .binnen{transform-box:fill-box;transform-origin:center;animation:rond 22s linear infinite reverse}
+    @keyframes rond{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <circle cx="100" cy="100" r="94" stroke-width="1"/>
+  <circle cx="100" cy="100" r="90" stroke-width="1.5"/>
+  <path d="M100 10L100 18M108.8 10.4L108.4 14.4M117.6 11.7L116.8 15.7M126.1 13.9L125 17.7M134.4 16.9L131.4 24.2M142.4 20.6L140.5 24.2M150 25.2L147.8 28.5M157.1 30.4L154.6 33.5M163.6 36.4L158 42M169.6 42.9L166.5 45.4M174.8 50L171.5 52.2M179.4 57.6L175.8 59.5M183.1 65.6L175.8 68.6M186.1 73.9L182.3 75M188.3 82.4L184.3 83.2M189.6 91.2L185.6 91.6M190 100L182 100M189.6 108.8L185.6 108.4M188.3 117.6L184.3 116.8M186.1 126.1L182.3 125M183.1 134.4L175.8 131.4M179.4 142.4L175.8 140.5M174.8 150L171.5 147.8M169.6 157.1L166.5 154.6M163.6 163.6L158 158M157.1 169.6L154.6 166.5M150 174.8L147.8 171.5M142.4 179.4L140.5 175.8M134.4 183.1L131.4 175.8M126.1 186.1L125 182.3M117.6 188.3L116.8 184.3M108.8 189.6L108.4 185.6M100 190L100 182M91.2 189.6L91.6 185.6M82.4 188.3L83.2 184.3M73.9 186.1L75 182.3M65.6 183.1L68.6 175.8M57.6 179.4L59.5 175.8M50 174.8L52.2 171.5M42.9 169.6L45.4 166.5M36.4 163.6L42 158M30.4 157.1L33.5 154.6M25.2 150L28.5 147.8M20.6 142.4L24.2 140.5M16.9 134.4L24.2 131.4M13.9 126.1L17.7 125M11.7 117.6L15.7 116.8M10.4 108.8L14.4 108.4M10 100L18 100M10.4 91.2L14.4 91.6M11.7 82.4L15.7 83.2M13.9 73.9L17.7 75M16.9 65.6L24.2 68.6M20.6 57.6L24.2 59.5M25.2 50L28.5 52.2M30.4 42.9L33.5 45.4M36.4 36.4L42 42M42.9 30.4L45.4 33.5M50 25.2L52.2 28.5M57.6 20.6L59.5 24.2M65.6 16.9L68.6 24.2M73.9 13.9L75 17.7M82.4 11.7L83.2 15.7M91.2 10.4L91.6 14.4" stroke-width="1"/>
+  <circle class="ring" cx="100" cy="100" r="40" stroke-width=".8" stroke-dasharray="3 4"/>
+  <path d="M100 100L157 43M100 100L157 157M100 100L43 157M100 100L43 43" stroke-width=".7"/>
+  <g class="binnen"><path d="M100 58L108 92 142 100 108 108 100 142 92 108 58 100 92 92Z" stroke-width="1" transform="rotate(45 100 100)"/></g>
+  <g class="zwaai"><path d="M100 16L109 91 184 100 109 109 100 184 91 109 16 100 91 91Z" stroke-width="1.6"/><path d="M100 16V184M16 100H184" stroke-width=".6"/></g>
+  <path class="ster" style="animation-delay:0s" d="M14 9Q14 16 21 16Q14 16 14 23Q14 16 7 16Q14 16 14 9Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-1.8s" d="M186 17Q186 22 191 22Q186 22 186 27Q186 22 181 22Q186 22 186 17Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-3.3s" d="M180 176Q180 184 188 184Q180 184 180 192Q180 184 172 184Q180 184 180 176Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-2.4s" d="M22 172Q22 176 26 176Q22 176 22 180Q22 176 18 176Q22 176 22 172Z" stroke="none"/>
+</svg>

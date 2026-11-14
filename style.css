@@ -1,0 +1,504 @@
+/* Basil Hargrove — landingspagina "De Hargrove-dossiers"
+   Kleuren en fonts uit 00_huisstijl/huisstijl.json. Mobiel eerst. */
+
+:root {
+  --antraciet: #2E2E2E;
+  --inkt: #1C1C1C;
+  --papier: #EDE4D3;
+  --kraft: #B59A78;
+  --messing: #C29A5B;
+  --zegellak: #7A2E26;
+  --groen: #2F4A3E;
+
+  --titel: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+  --tekst: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --notitie: "Courier Prime", "Courier New", monospace;
+
+  --rand: clamp(1.25rem, 5vw, 4.5rem);
+  --maat: 72rem;
+  --vloei: clamp(12rem, 30vw, 24rem); /* lengte van een kleurovergang tussen secties */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+body {
+  margin: 0;
+  background: var(--antraciet);
+  color: var(--papier);
+  font: 400 1.0625rem/1.7 var(--tekst);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--titel); font-weight: 400; line-height: .95; letter-spacing: .01em; margin: 0; text-transform: uppercase; }
+p { margin: 0 0 1em; }
+
+:focus-visible { outline: 2px solid var(--messing); outline-offset: 3px; }
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 10;
+  background: var(--papier); color: var(--inkt); padding: .6rem 1rem;
+  font-family: var(--notitie); text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+
+/* ---------- kop ---------- */
+.kop {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.25rem var(--rand);
+  max-width: calc(var(--maat) + 2 * var(--rand)); margin: 0 auto;
+}
+.merk { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+.merk img { width: 40px; height: 40px; }
+.merk span { font-family: var(--titel); font-size: clamp(1.3rem, 5vw, 1.6rem); letter-spacing: .06em; padding-top: .15em; white-space: nowrap; }
+.kop-link { font-family: var(--notitie); font-size: .9rem; color: var(--kraft); text-underline-offset: .3em; white-space: nowrap; }
+.kop-link:hover { color: var(--papier); }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  display: grid; gap: 2.5rem;
+  padding: 2.5rem var(--rand) 4.5rem;
+  max-width: calc(var(--maat) + 2 * var(--rand)); margin: 0 auto;
+}
+.regel {
+  font-family: var(--notitie); font-size: .95rem; color: var(--kraft);
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(3.6rem, 15vw, 8.25rem);
+  max-width: 7.5ch;
+  margin-bottom: 1.5rem;
+}
+.hero-sub { font-style: italic; font-size: clamp(1.2rem, 3.4vw, 1.5rem); line-height: 1.45; max-width: 26ch; color: var(--papier); }
+.hero-acties { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 2rem; }
+
+.knop {
+  display: inline-block;
+  background: var(--messing); color: var(--inkt);
+  font-family: var(--titel); font-size: 1.45rem; letter-spacing: .06em;
+  padding: .7rem 1.4rem .5rem; text-decoration: none;
+  border: 1px solid var(--messing);
+}
+.knop:hover { background: var(--papier); border-color: var(--papier); }
+.tekstlink { font-family: var(--notitie); color: var(--kraft); text-underline-offset: .3em; }
+.tekstlink:hover { color: var(--papier); }
+
+.hero-beeld { position: relative; margin: 0; justify-self: center; width: min(100%, 30rem); }
+.hero-beeld img {
+  width: 100%;
+  -webkit-mask-image: radial-gradient(closest-side at 52% 50%, #000 58%, transparent 100%);
+          mask-image: radial-gradient(closest-side at 52% 50%, #000 58%, transparent 100%);
+}
+
+/* de veldnotitie: het ene "fysieke" element op de pagina */
+.notitie {
+  position: absolute; left: -.5rem; bottom: 9%;
+  width: min(15.5rem, 62%);
+  background: var(--papier); color: var(--inkt);
+  font-family: var(--notitie); font-size: .82rem; line-height: 1.5;
+  padding: 1rem 1.1rem .9rem;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 1px 0 rgba(0,0,0,.25), 0 14px 28px -12px rgba(0,0,0,.6);
+  background-image: repeating-linear-gradient(transparent 0 1.42em, rgba(28,28,28,.09) 1.42em calc(1.42em + 1px));
+  background-position: 0 2.55rem;
+}
+.notitie-kop { display: block; font-weight: 700; border-bottom: 1px solid var(--inkt); padding-bottom: .3rem; margin-bottom: .45rem; }
+.notitie dl { display: grid; grid-template-columns: auto 1fr; gap: 0 .75rem; margin: 0; }
+.notitie dt { color: #4a4a4a; }
+.notitie dd { margin: 0; }
+.stempel {
+  position: absolute; right: -.6rem; top: -1rem;
+  font-family: var(--titel); font-size: 1.05rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--zegellak); border: 2px solid var(--zegellak); padding: .3rem .6rem .15rem;
+  background: var(--papier);
+  transform: rotate(6deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .notitie { animation: neerleggen .9s cubic-bezier(.2,.7,.2,1) .35s both; }
+  @keyframes neerleggen {
+    from { opacity: 0; transform: translateY(1.25rem) rotate(-5deg); }
+    to   { opacity: 1; transform: rotate(-1.5deg); }
+  }
+}
+
+/* ---------- verhaal ---------- */
+.verhaal {
+  display: grid; gap: 1.5rem 4rem;
+  padding: 4.5rem var(--rand);
+  max-width: calc(var(--maat) + 2 * var(--rand)); margin: 0 auto;
+}
+.verhaal h2 { font-size: clamp(3rem, 10vw, 5.5rem); color: var(--kraft); }
+.verhaal-tekst { max-width: 38rem; }
+.lead { font-size: clamp(1.35rem, 3.6vw, 1.7rem); line-height: 1.4; font-style: italic; }
+blockquote {
+  margin: 2.25rem 0 0; padding: 0 0 0 1.25rem;
+  border-left: 2px solid var(--kraft);
+}
+blockquote p { font-style: italic; font-size: 1.2rem; line-height: 1.5; margin-bottom: .5rem; }
+blockquote footer { font-family: var(--notitie); font-size: .9rem; color: var(--kraft); }
+blockquote footer::before { content: "— "; }
+
+/* ---------- sfeerband ---------- */
+.sfeer { margin: 0; }
+.sfeer img { width: 100%; height: clamp(14rem, 42vw, 38rem); object-fit: cover; object-position: 50% 50%;
+  -webkit-mask-image: linear-gradient(transparent, #000 28%, #000 72%, transparent);
+          mask-image: linear-gradient(transparent, #000 28%, #000 72%, transparent);
+}
+
+/* ---------- dossiers (papieren archief) ---------- */
+/* overgangen: elke sectie smelt in de kleur van de volgende, zonder harde rand.
+   De tekst begint pas na de overgang, zodat het contrast overal goed blijft. */
+.dossiers {
+  color: var(--inkt);
+  /* zacht verloop: kleuren gemengd in OKLab, met een sinus-curve zodat begin en einde geen zichtbare rand hebben */
+  background: linear-gradient(to bottom,
+    #2E2E2E 0,
+    #313130 calc(var(--vloei) * 0.083),
+    #393838 calc(var(--vloei) * 0.167),
+    #464543 calc(var(--vloei) * 0.25),
+    #595753 calc(var(--vloei) * 0.333),
+    #6F6C66 calc(var(--vloei) * 0.417),
+    #87837B calc(var(--vloei) * 0.5),
+    #A09B91 calc(var(--vloei) * 0.583),
+    #B9B2A6 calc(var(--vloei) * 0.667),
+    #CEC7B8 calc(var(--vloei) * 0.75),
+    #DFD6C7 calc(var(--vloei) * 0.833),
+    #E9E1D0 calc(var(--vloei) * 0.917),
+    #EDE4D3 calc(var(--vloei) * 1),
+    #EDE4D3 calc(100% - var(--vloei) * 1),
+    #E9E1D0 calc(100% - var(--vloei) * 0.917),
+    #DFD9C8 calc(100% - var(--vloei) * 0.833),
+    #CFCCBB calc(100% - var(--vloei) * 0.75),
+    #BABBAB calc(100% - var(--vloei) * 0.667),
+    #A2A898 calc(100% - var(--vloei) * 0.583),
+    #8A9385 calc(100% - var(--vloei) * 0.5),
+    #718071 calc(100% - var(--vloei) * 0.417),
+    #5B6E60 calc(100% - var(--vloei) * 0.333),
+    #495F52 calc(100% - var(--vloei) * 0.25),
+    #3B5347 calc(100% - var(--vloei) * 0.167),
+    #324C40 calc(100% - var(--vloei) * 0.083),
+    #2F4A3E 100%);
+  padding: calc(var(--vloei) + 1.5rem) var(--rand) calc(var(--vloei) + 2rem);
+}
+.sectie-intro { max-width: var(--maat); margin: 0 auto 3rem; }
+.sectie-intro h2 { font-size: clamp(2.8rem, 9vw, 5rem); margin-bottom: 1rem; }
+.sectie-intro p { max-width: 36rem; font-size: 1.15rem; }
+
+.map-rij {
+  list-style: none; margin: 0 auto; padding: 0;
+  max-width: var(--maat);
+  display: grid; gap: 3.25rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.map article {
+  position: relative; height: 100%;
+  background: var(--kraft);
+  padding: 1.1rem 1.1rem 1.4rem;
+  border-radius: 0 3px 3px 3px;
+}
+/* tab van de dossiermap, in de variantkleur */
+.tab {
+  position: absolute; left: 0; top: -2.1rem; margin: 0;
+  background: var(--tab); color: var(--tabtekst);
+  font-family: var(--titel); font-size: 1.5rem; letter-spacing: .06em; line-height: 1;
+  padding: .55rem 1.1rem .4rem;
+  border-radius: 4px 4px 0 0;
+}
+.map img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid rgba(28,28,28,.55); }
+.map h3 { font-size: 2.3rem; margin: 1rem 0 .6rem; }
+.gegevens {
+  display: grid; grid-template-columns: auto 1fr; gap: .1rem .9rem;
+  font-family: var(--notitie); font-size: .9rem; line-height: 1.45;
+  margin: 0 0 .9rem; padding: .6rem 0; border-top: 1px solid rgba(28,28,28,.4); border-bottom: 1px solid rgba(28,28,28,.4);
+}
+.gegevens dd { margin: 0; }
+.bevinding { font-style: italic; margin: 0; line-height: 1.55; }
+
+/* ---------- atlas (bibliotheekgroen) ---------- */
+.atlas {
+  background: linear-gradient(to bottom,
+    #2F4A3E calc(100% - var(--vloei) * 1),
+    #2F4A3E calc(100% - var(--vloei) * 0.917),
+    #2F483D calc(100% - var(--vloei) * 0.833),
+    #2F463C calc(100% - var(--vloei) * 0.75),
+    #2F433A calc(100% - var(--vloei) * 0.667),
+    #2F3F38 calc(100% - var(--vloei) * 0.583),
+    #2F3C36 calc(100% - var(--vloei) * 0.5),
+    #2F3834 calc(100% - var(--vloei) * 0.417),
+    #2F3532 calc(100% - var(--vloei) * 0.333),
+    #2F3230 calc(100% - var(--vloei) * 0.25),
+    #2E302F calc(100% - var(--vloei) * 0.167),
+    #2E2E2E calc(100% - var(--vloei) * 0.083),
+    #2E2E2E 100%);
+  padding: 4.5rem var(--rand) calc(var(--vloei) + 1rem);
+}
+.platen { max-width: var(--maat); margin: 0 auto; display: grid; gap: 2.5rem; align-items: start; }
+.plaat { margin: 0; }
+.plaat img { width: 100%; box-shadow: 0 18px 40px -20px rgba(0,0,0,.7); }
+.plaat figcaption { font-family: var(--notitie); font-size: .9rem; margin-top: .75rem; }
+.potten { list-style: none; margin: 0 0 2.5rem; padding: 0; }
+.potten li { padding: .7rem 0; border-bottom: 1px solid rgba(237,228,211,.25); }
+.potten li:first-child { border-top: 1px solid rgba(237,228,211,.25); }
+.potten strong { font-family: var(--titel); font-weight: 400; font-size: 1.45rem; letter-spacing: .04em; margin-right: .35rem; }
+
+/* ---------- inschrijven ---------- */
+.inschrijven {
+  display: grid; gap: 2.5rem 4rem; align-items: start;
+  padding: 5rem var(--rand) 5.5rem;
+  max-width: calc(var(--maat) + 2 * var(--rand)); margin: 0 auto;
+}
+.inschrijven h2 { font-size: clamp(3rem, 10vw, 5.25rem); margin-bottom: 1.25rem; }
+.inschrijven-tekst > p { font-size: 1.15rem; max-width: 30rem; }
+.ontvang { list-style: none; padding: 0; margin: 1.75rem 0 0; max-width: 30rem; }
+.ontvang li { position: relative; padding: .5rem 0 .5rem 1.6rem; }
+.ontvang li::before { content: ""; position: absolute; left: 0; top: 1.15em; width: .8rem; height: 1px; background: var(--kraft); }
+
+.formulierkaart {
+  background: var(--papier); color: var(--inkt);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  outline: 1px solid var(--messing); outline-offset: -.6rem;
+}
+.laden { font-family: var(--notitie); font-size: .95rem; padding: 1rem 0; }
+.klein { font-size: .88rem; line-height: 1.55; margin: 1rem 0 0; color: #3a3a3a; }
+
+/* ---------- footer ---------- */
+.voet {
+  background: linear-gradient(to bottom,
+    #2E2E2E 0,
+    #2E2E2E calc(8rem * 0.083),
+    #2D2D2D calc(8rem * 0.167),
+    #2B2B2B calc(8rem * 0.25),
+    #292929 calc(8rem * 0.333),
+    #272727 calc(8rem * 0.417),
+    #252525 calc(8rem * 0.5),
+    #232323 calc(8rem * 0.583),
+    #202020 calc(8rem * 0.667),
+    #1F1F1F calc(8rem * 0.75),
+    #1D1D1D calc(8rem * 0.833),
+    #1C1C1C calc(8rem * 0.917),
+    #1C1C1C calc(8rem * 1)); color: #CFC6B4;
+  display: grid; gap: 2rem;
+  padding: 3.5rem var(--rand) 3rem;
+  font-size: .92rem; line-height: 1.6;
+}
+.voet > * { max-width: 34rem; }
+.voet-naam { font-family: var(--titel); font-size: 1.8rem; letter-spacing: .06em; color: var(--papier); margin-bottom: .2rem; }
+.voet-kop { font-size: 1.3rem; letter-spacing: .06em; color: var(--papier); margin-bottom: .5rem; }
+
+/* ---------- achtergrondtekeningen ----------
+   Lijnwerk uit het onderzoekersarchief (vergrootglas, oude wereldkaart, windroos),
+   heel zacht achter de inhoud. Gemaakt met _scripts/maak-deco.mjs. Puur decoratief. */
+main { overflow-x: clip; }
+.hero, .verhaal, .dossiers, .atlas, .inschrijven { position: relative; isolation: isolate; }
+.hero::after, .verhaal::after, .dossiers::before, .atlas::after, .inschrijven::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  background: no-repeat center / contain;
+}
+.hero::after {
+  background-image: url(img/deco-vergrootglas-licht.svg);
+  width: clamp(13rem, 30vw, 24rem); aspect-ratio: 1;
+  right: -3rem; top: 34%;
+  opacity: .07; rotate: -16deg;
+}
+.verhaal::after {
+  background-image: url(img/deco-windroos-licht.svg);
+  transform: rotate(var(--scroll-draai, 0deg)); /* extra draai bij scrollen (beweging.js) */
+  width: clamp(14rem, 30vw, 25rem); aspect-ratio: 1;
+  left: -6rem; bottom: -5rem;
+  opacity: .06;
+}
+.dossiers::before {
+  inset: var(--vloei) 0;
+  background-image: url(img/deco-kaart-donker.svg);
+  background-size: min(84rem, 170%) auto; background-position: 50% 45%;
+  opacity: .13;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 45%, #000 40%, transparent 100%);
+          mask-image: radial-gradient(ellipse 60% 55% at 50% 45%, #000 40%, transparent 100%);
+}
+.atlas::after {
+  background-image: url(img/deco-vergrootglas-licht.svg);
+  width: clamp(9rem, 18vw, 15rem); aspect-ratio: 1;
+  right: 3%; top: 2rem;
+  opacity: .09; rotate: 28deg;
+}
+.inschrijven::after {
+  background-image: url(img/deco-kaart-licht.svg);
+  width: min(60rem, 150%); aspect-ratio: 1000 / 560;
+  left: -12%; bottom: -2rem;
+  opacity: .05;
+}
+
+/* trage beweging: het vergrootglas zoekt, de windroos draait, de kaarten drijven.
+   Alleen voor wie geen "minder beweging" heeft ingesteld. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero::after { animation: speuren 19s ease-in-out infinite; }
+  .atlas::after { animation: speuren-klein 23s ease-in-out -6s infinite; }
+  .verhaal::after { animation: draaien 180s linear infinite; }
+  .dossiers::before { animation: drijven 48s ease-in-out infinite alternate; }
+  .inschrijven::after { animation: drijven 60s ease-in-out -20s infinite alternate; }
+}
+@keyframes speuren {
+  0%, 100% { translate: 0 0;            rotate: -16deg; }
+  25%      { translate: -1.6rem -1.1rem; rotate: -11deg; }
+  50%      { translate: -2.8rem .8rem;   rotate: -20deg; }
+  75%      { translate: -.9rem 1.4rem;   rotate: -13deg; }
+}
+@keyframes speuren-klein {
+  0%, 100% { translate: 0 0;           rotate: 28deg; }
+  33%      { translate: -1.2rem .9rem; rotate: 22deg; }
+  66%      { translate: .6rem 1.5rem;  rotate: 33deg; }
+}
+@keyframes draaien { to { rotate: 360deg; } }
+@keyframes drijven {
+  from { translate: -1.5rem 0; }
+  to   { translate: 1.5rem -.75rem; }
+}
+
+/* scrollbeweging (beweging.js zet .beweging op <html>; zonder JS of bij "minder beweging" is alles meteen zichtbaar) */
+.beweging :is(.verhaal h2, .verhaal-tekst, .sectie-intro, .map, .plaat, .potten, .inschrijven-tekst, .formulierkaart) {
+  transition: opacity .9s ease-out var(--vertraging, 0s), translate .9s cubic-bezier(.2,.7,.2,1) var(--vertraging, 0s);
+}
+.beweging :is(.verhaal h2, .verhaal-tekst, .sectie-intro, .map, .plaat, .potten, .inschrijven-tekst, .formulierkaart):not(.zichtbaar) {
+  opacity: 0; translate: 0 1.25rem;
+}
+/* atlas: de platen schuiven schuin van opzij naar boven binnen (links van linksonder, rechts van rechtsonder) */
+.beweging .platen > .plaat:not(.zichtbaar) { translate: -4rem 3rem; }
+.beweging .plaat-naast :is(.potten, .plaat):not(.zichtbaar) { translate: 4rem 3rem; }
+.beweging :is(.platen > .plaat, .plaat-naast .potten, .plaat-naast .plaat) {
+  transition-duration: 1.2s;
+}
+.beweging .plaat-naast .plaat { --vertraging: .15s; }
+
+/* atlas: plaat inspecteren met de muis (beweging.js verpakt het beeld in .kantel) */
+/* perspectief zit in de transform zelf (beweging.js), zodat het klopt ook al is plaat I hoger dan het beeld */
+.kantel {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.kantel.actief { transition: transform .12s ease-out; }
+.kantel img { transition: box-shadow .5s ease-out; }
+.kantel.actief img { box-shadow: 0 34px 60px -24px rgba(0,0,0,.85); }
+/* lichtglans die de cursor volgt, als licht van een bureaulamp op papier */
+.kantel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,250,235,.28), transparent 55%);
+  opacity: 0; transition: opacity .5s ease-out;
+}
+.kantel.actief::after { opacity: 1; }
+
+/* de tekeningen zelf komen nog trager tevoorschijn */
+.beweging :is(.verhaal, .atlas, .inschrijven)::after, .beweging .dossiers::before { transition: opacity 2s ease-out; }
+.beweging :is(.verhaal, .atlas, .inschrijven):not(.zichtbaar)::after, .beweging .dossiers:not(.zichtbaar)::before { opacity: 0; }
+
+/* ---------- interactieve herkomstkaart (kaart.js) ---------- */
+.kaart-vlak { position: relative; }
+.zichtbaar-voor-lezer {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+.pin {
+  position: absolute; z-index: 1;
+  width: 1.9rem; height: 1.9rem; margin: -.95rem 0 0 -.95rem; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; cursor: pointer;
+}
+.pin::before {
+  content: ""; position: absolute; inset: .2rem; border-radius: 50%;
+  border: 2px solid var(--zegellak); opacity: .7;
+  transition: transform .25s ease-out, background-color .25s, opacity .25s;
+}
+.pin:hover::before, .pin.open::before { opacity: 1; transform: scale(1.15); background: rgba(122,46,38,.18); }
+.pin:focus-visible { outline: 2px solid var(--inkt); outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  /* een zachte puls verraadt dat je erop kunt klikken */
+  .pin:not(.open)::before { animation: puls 2.8s ease-out infinite; }
+  .pin:nth-of-type(2)::before { animation-delay: -.7s; }
+  .pin:nth-of-type(3)::before { animation-delay: -1.4s; }
+  .pin:nth-of-type(4)::before { animation-delay: -2.1s; }
+  .pin:hover::before { animation: none; }
+  .kaartje:not([hidden]) { animation: openvouwen .35s cubic-bezier(.2,.7,.2,1); }
+}
+@keyframes puls {
+  0%   { transform: scale(.55); opacity: .95; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+@keyframes openvouwen { from { opacity: 0; translate: 0 .5rem; } }
+
+/* de veldnotitie die opent bij een punt */
+.kaartje {
+  position: absolute; z-index: 2;
+  width: min(15rem, calc(100% - 16px));
+  background: var(--papier); color: var(--inkt);
+  font-family: var(--notitie); font-size: .8rem; line-height: 1.45;
+  padding: 1rem 1.15rem .95rem;
+  rotate: -1deg;
+  box-shadow: 0 0 0 1px rgba(28,28,28,.3), 0 16px 32px -12px rgba(0,0,0,.6);
+}
+.kaartje[hidden] { display: none; }
+.kaartje-kop { color: var(--zegellak); margin: 0 0 .15rem; letter-spacing: .05em; }
+.kaartje-naam { font-family: var(--titel); font-size: 1.75rem; line-height: 1; letter-spacing: .04em; margin: 0 0 .55rem; }
+.kaartje dl {
+  display: grid; grid-template-columns: auto 1fr; gap: 0 .8rem; margin: 0 0 .6rem;
+  padding: .45rem 0; border-top: 1px solid rgba(28,28,28,.4); border-bottom: 1px solid rgba(28,28,28,.4);
+}
+.kaartje dd { margin: 0; }
+.kaartje-bevinding { font-family: var(--tekst); font-style: italic; font-size: .88rem; line-height: 1.45; margin: 0 0 .6rem; }
+.kaartje-link { font-weight: 700; text-underline-offset: .25em; }
+.kaartje-link:hover { color: var(--zegellak); }
+.kaartje-sluit {
+  position: absolute; top: .25rem; right: .3rem;
+  background: none; border: 0; color: var(--inkt); cursor: pointer;
+  font: 400 1.35rem/1 var(--tekst); padding: .25rem .45rem;
+}
+.kaartje-sluit:focus-visible, .kaartje-link:focus-visible { outline-color: var(--inkt); }
+
+/* dossiermap uitlichten na "Open het dossier" op de kaart (kaart.js) */
+.map article:focus { outline: none; } /* focus komt van het script; het uitlichten toont waar je bent */
+.map.uitgelicht article { animation: uitlichten 3.2s ease-out .45s both; }
+@keyframes uitlichten {
+  0%   { translate: 0 0;     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; }
+  14%  { translate: 0 -.5rem; box-shadow: 0 0 0 4px var(--papier), 0 0 0 7px var(--tab), 0 26px 40px -18px rgba(0,0,0,.55); }
+  70%  { translate: 0 -.5rem; box-shadow: 0 0 0 4px var(--papier), 0 0 0 7px var(--tab), 0 26px 40px -18px rgba(0,0,0,.55); }
+  100% { translate: 0 0;     box-shadow: 0 0 0 4px transparent, 0 0 0 7px transparent, 0 0 0 0 transparent; }
+}
+/* de tab van de map knippert één keer mee */
+.map.uitgelicht .tab { animation: uitlichten-tab 3.2s ease-out .45s both; }
+@keyframes uitlichten-tab {
+  0%, 100% { filter: none; }
+  14%, 70% { filter: brightness(1.12) saturate(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* zonder beweging: alleen de rand, zonder optillen */
+  .map.uitgelicht article { animation-name: uitlichten-stil; }
+  @keyframes uitlichten-stil {
+    0%, 85% { box-shadow: 0 0 0 4px var(--papier), 0 0 0 7px var(--tab); }
+    100%    { box-shadow: 0 0 0 4px transparent, 0 0 0 7px transparent; }
+  }
+}
+
+/* ---------- groter scherm ---------- */
+@media (min-width: 56rem) {
+  .hero { grid-template-columns: 1.15fr .85fr; align-items: center; padding-top: 3.5rem; min-height: min(52rem, calc(100vh - 5rem)); }
+  .hero::before {
+    content: ""; position: absolute; inset: 0 var(--rand) 2rem;
+    border: 1px solid rgba(194,154,91,.45); pointer-events: none;
+    margin: 0 -1.5rem;
+  }
+  .hero-tekst { padding-left: .5rem; }
+  .hero-beeld { justify-self: end; }
+  .notitie { left: -3rem; }
+  .verhaal { grid-template-columns: 1fr 1.6fr; }
+  .platen { grid-template-columns: 1.25fr 1fr; gap: 3.5rem; }
+  /* plaat I rekt mee tot de hoogte van de rechterkolom; de oolong-tekening vult het vrije vlak eronder */
+  .platen > .plaat { align-self: stretch; display: flex; flex-direction: column; }
+  .platen > .plaat::after {
+    content: ""; flex: 1 1 auto; min-height: 0; margin-top: 2rem; pointer-events: none;
+    background: url(img/deco-oolong-licht.svg) no-repeat center / contain;
+    max-height: 30rem; opacity: .18;
+  }
+  .inschrijven { grid-template-columns: 1fr 1fr; }
+  .voet { grid-template-columns: 1fr 1.3fr 1.3fr; gap: 3rem; }
+}

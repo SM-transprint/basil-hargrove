@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" fill="none" stroke="#1C1C1C" stroke-linecap="round">
+  <style>
+    .ster{fill:#1C1C1C;transform-box:fill-box;transform-origin:center;animation:twinkel 5s ease-in-out infinite}
+    @keyframes twinkel{0%,100%{opacity:.15;transform:scale(.5) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+    .zwaai{transform-box:fill-box;transform-origin:center;animation:zwaai 9s ease-in-out infinite}
+    @keyframes zwaai{0%,100%{transform:rotate(-10deg)}30%{transform:rotate(14deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(6deg)}}
+    .meridiaan{animation:draai 36s linear infinite}@keyframes draai{0%{rx:0px}8.3%{rx:113.9px}16.7%{rx:220px}25%{rx:311.1px}33.3%{rx:381.1px}41.7%{rx:425px}50%{rx:440px}58.3%{rx:425px}66.7%{rx:381.1px}75%{rx:311.1px}83.3%{rx:220px}91.7%{rx:113.9px}100%{rx:0px}}
+    .route{animation:reis 7s linear infinite}@keyframes reis{to{stroke-dashoffset:-90}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <ellipse cx="500" cy="280" rx="440" ry="220" stroke-width="1.6"/>
+  <ellipse cx="500" cy="280" rx="449" ry="229" stroke-width=".7"/>
+  <ellipse class="meridiaan" style="animation-delay:-0s" cx="500" cy="280" rx="0" ry="220" stroke-width=".8"/>
+  <ellipse class="meridiaan" style="animation-delay:-6s" cx="500" cy="280" rx="220" ry="220" stroke-width=".8"/>
+  <ellipse class="meridiaan" style="animation-delay:-12s" cx="500" cy="280" rx="381.1" ry="220" stroke-width=".8"/>
+  <ellipse class="meridiaan" style="animation-delay:-18s" cx="500" cy="280" rx="440" ry="220" stroke-width=".8"/>
+  <ellipse class="meridiaan" style="animation-delay:-24s" cx="500" cy="280" rx="381.1" ry="220" stroke-width=".8"/>
+  <ellipse class="meridiaan" style="animation-delay:-30s" cx="500" cy="280" rx="220" ry="220" stroke-width=".8"/>
+  <path d="M209 115H791" stroke-width="0.8"/>
+  <path d="M118.9 170H881.1" stroke-width="0.8"/>
+  <path d="M74 225H926" stroke-dasharray="6 6" stroke-width="0.8"/>
+  <path d="M60 280H940" stroke-width="1.2"/>
+  <path d="M74 335H926" stroke-dasharray="6 6" stroke-width="0.8"/>
+  <path d="M118.9 390H881.1" stroke-width="0.8"/>
+  <path d="M209 445H791" stroke-width="0.8"/>
+  <path class="route" d="M790 205C700 120 560 95 470 150" stroke-dasharray="2 7" stroke-width="2"/>
+  <circle cx="790" cy="205" r="6" stroke-width="1.5"/><circle cx="470" cy="150" r="6" stroke-width="1.5"/><path d="M466 146l8 8M474 146l-8 8" stroke-width="1.2"/>
+  <g transform="translate(905 470)" stroke-width="1"><circle r="34"/><path d="M0-44V44M-44 0H44" stroke-width=".6"/><path class="zwaai" d="M0-44L6-6 44 0 6 6 0 44-6 6-44 0-6-6Z"/></g>
+  <path class="ster" style="animation-delay:0s" d="M60 22Q60 40 78 40Q60 40 60 58Q60 40 42 40Q60 40 60 22Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-1.7s" d="M930 38Q930 60 952 60Q930 60 930 82Q930 60 908 60Q930 60 930 38Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-3.1s" d="M40 485Q40 500 55 500Q40 500 40 515Q40 500 25 500Q40 500 40 485Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-2.2s" d="M150 94Q150 105 161 105Q150 105 150 116Q150 105 139 105Q150 105 150 94Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-0.8s" d="M960 287Q960 300 973 300Q960 300 960 313Q960 300 947 300Q960 300 960 287Z" stroke="none"/>
+  <path class="ster" style="animation-delay:-4s" d="M700 512Q700 528 716 528Q700 528 700 544Q700 528 684 528Q700 528 700 512Z" stroke="none"/>
+</svg>

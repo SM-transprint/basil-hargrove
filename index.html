@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basil Hargrove · Onderzochte oolong</title>
+  <meta name="description" content="Basil Hargrove onderzoekt oolong zoals een detective een zaak. Vier dossiers, één veldnotitie per maand. Lees mee.">
+  <meta name="theme-color" content="#2E2E2E">
+  <meta property="og:title" content="Basil Hargrove · Onderzochte oolong">
+  <meta property="og:description" content="Vier oolongs, vier dossiers. Ontvang de veldnotities van Basil Hargrove.">
+  <meta property="og:image" content="img/og-beeld.jpg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="beweging.js" defer></script>
+  <script src="kaart.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#inschrijven">Ga meteen naar inschrijven</a>
+
+  <header class="kop">
+    <a class="merk" href="#top" aria-label="Basil Hargrove, naar boven">
+      <img src="img/embleem-licht.png" alt="" width="40" height="40">
+      <span>Basil Hargrove</span>
+    </a>
+    <a class="kop-link" href="#inschrijven">Schrijf je in</a>
+  </header>
+
+  <main id="top">
+    <!-- 1. HERO -->
+    <section class="hero" aria-labelledby="hero-titel">
+      <div class="hero-tekst">
+        <p class="regel">Dossier Nº 00 — het onderzoek begint</p>
+        <h1 id="hero-titel">Elke infusie is een aanwijzing.</h1>
+        <p class="hero-sub">Wij onderzoeken oolong tot in het laatste blad.</p>
+        <p class="hero-acties">
+          <a class="knop" href="#inschrijven">Open het dossier <span aria-hidden="true">→</span></a>
+          <a class="tekstlink" href="#dossiers">Bekijk de vier zaken</a>
+        </p>
+      </div>
+      <figure class="hero-beeld">
+        <img src="img/hero-dong-ding.jpg" width="960" height="1152"
+             alt="Kraftkleurige theedoos van Basil Hargrove met een koperbruine band &quot;Dong Ding, medium geroosterd&quot;, op een donkergrijze achtergrond.">
+        <figcaption class="notitie" aria-label="Veldnotitie bij Dong Ding">
+          <span class="notitie-kop">Veldnotitie Nº 03</span>
+          <dl>
+            <dt>Herkomst</dt><dd>Lugu, Taiwan</dd>
+            <dt>Oxidatie</dt><dd>± 35 %</dd>
+            <dt>Infusie 4</dt><dd>honing, noot</dd>
+          </dl>
+          <span class="stempel" aria-hidden="true">Onderzocht</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- 2. HET VERHAAL -->
+    <section class="verhaal" aria-labelledby="verhaal-titel">
+      <h2 id="verhaal-titel">De onderzoeker.</h2>
+      <div class="verhaal-tekst">
+        <p class="lead">Basil Hargrove drinkt geen thee. Hij onderzoekt ze.</p>
+        <p>Vanuit een kleine studeerkamer in Londen legt hij elke oolong vast zoals een detective een zaak: herkomst, oxidatie, roostering, en wat er gebeurt bij de vierde infusie. Hij noteert, vergelijkt en proeft opnieuw.</p>
+        <p>Waarom oolong? Omdat geen enkele thee zoveel verbergt. Tussen groen en zwart ligt een smal gebied waar elke graad oxidatie en elk uur roostering het verhaal verandert. Daar zit het werk. En het plezier.</p>
+        <blockquote>
+          <p>Oolong geeft zich niet in één kop prijs. Dat is precies de bedoeling.</p>
+          <footer>Basil Hargrove</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- SFEERBEELD: tijdelijk productbeeld. Vervang src en alt door het AI-sfeerbeeld (Firefly/Weave). -->
+    <figure class="sfeer">
+      <img src="img/sfeer-tijdelijk.jpg" width="1600" height="682" loading="lazy"
+           alt="Theedoos Da Hong Pao van Basil Hargrove in laag, warm licht op een donkere ondergrond.">
+    </figure>
+
+    <!-- 3. DE VIER DOSSIERS -->
+    <section class="dossiers" id="dossiers" aria-labelledby="dossiers-titel">
+      <div class="sectie-intro">
+        <h2 id="dossiers-titel">Vier oolongs. Vier zaken.</h2>
+        <p>Van licht geoxideerd tot diep geroosterd. Elk dossier begint bij de herkomst en eindigt in de kop.</p>
+      </div>
+
+      <ol class="map-rij" role="list">
+        <li class="map" style="--tab:#7F9475; --tabtekst:#1C1C1C">
+          <article aria-labelledby="d1">
+            <p class="tab">Nº 01</p>
+            <img src="img/dossier-ali-shan.jpg" width="560" height="700" loading="lazy" alt="Theedoos Ali Shan met een saliegroene band, dossier nummer 01.">
+            <h3 id="d1">Ali Shan</h3>
+            <dl class="gegevens">
+              <dt>Herkomst</dt><dd>Alishan, Taiwan</dd>
+              <dt>Oxidatie</dt><dd>± 20 %</dd>
+              <dt>Roostering</dt><dd>geen</dd>
+              <dt>Pot</dt><dd>glazen pot</dd>
+            </dl>
+            <p class="bevinding">Orchidee, room en berglucht. Beste in een glazen pot, zodat je het blad ziet openen.</p>
+          </article>
+        </li>
+        <li class="map" style="--tab:#B89A55; --tabtekst:#1C1C1C">
+          <article aria-labelledby="d2">
+            <p class="tab">Nº 02</p>
+            <img src="img/dossier-tie-guan-yin.jpg" width="560" height="700" loading="lazy" alt="Theedoos Tie Guan Yin met een okergele band, dossier nummer 02.">
+            <h3 id="d2">Tie Guan Yin</h3>
+            <dl class="gegevens">
+              <dt>Herkomst</dt><dd>Anxi, Fujian</dd>
+              <dt>Oxidatie</dt><dd>± 25 %</dd>
+              <dt>Roostering</dt><dd>licht</dd>
+              <dt>Pot</dt><dd>gaiwan</dd>
+            </dl>
+            <p class="bevinding">Orchidee en honing, met een afdronk die blijft hangen.</p>
+          </article>
+        </li>
+        <li class="map" style="--tab:#A0672F; --tabtekst:#1C1C1C">
+          <article aria-labelledby="d3">
+            <p class="tab">Nº 03</p>
+            <img src="img/dossier-dong-ding.jpg" width="560" height="700" loading="lazy" alt="Theedoos Dong Ding met een koperbruine band, dossier nummer 03.">
+            <h3 id="d3">Dong Ding</h3>
+            <dl class="gegevens">
+              <dt>Herkomst</dt><dd>Lugu, Taiwan</dd>
+              <dt>Oxidatie</dt><dd>± 35 %</dd>
+              <dt>Roostering</dt><dd>medium</dd>
+              <dt>Pot</dt><dd>Yixing-pot</dd>
+            </dl>
+            <p class="bevinding">Honing, geroosterde noot en een spoor van karamel.</p>
+          </article>
+        </li>
+        <li class="map" style="--tab:#5A3828; --tabtekst:#EDE4D3">
+          <article aria-labelledby="d4">
+            <p class="tab">Nº 04</p>
+            <img src="img/dossier-da-hong-pao.jpg" width="560" height="700" loading="lazy" alt="Theedoos Da Hong Pao met een donkerbruine band, dossier nummer 04.">
+            <h3 id="d4">Da Hong Pao</h3>
+            <dl class="gegevens">
+              <dt>Herkomst</dt><dd>Wuyi, Fujian</dd>
+              <dt>Oxidatie</dt><dd>± 60 %</dd>
+              <dt>Roostering</dt><dd>sterk</dd>
+              <dt>Pot</dt><dd>tetsubin</dd>
+            </dl>
+            <p class="bevinding">Mineraal, cacao en houtvuur. De zwaarste zaak in het archief.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 4. ATLAS EN HERKOMST -->
+    <section class="atlas" aria-labelledby="atlas-titel">
+      <div class="sectie-intro">
+        <h2 id="atlas-titel">Elke zaak heeft zijn pot.</h2>
+        <p>Een lichte oolong wil je zien openen, een geroosterde wil klei die onthoudt. Basil Hargrove tekende voor elk dossier de pot die erbij hoort, en zette de herkomst op de kaart.</p>
+      </div>
+      <div class="platen">
+        <figure class="plaat">
+          <img src="img/atlas-theepotten.png" width="1000" height="1125" loading="lazy"
+               alt="Lijntekening van vier theepotten: glazen pot voor Ali Shan, gaiwan voor Tie Guan Yin, Yixing-pot voor Dong Ding en tetsubin voor Da Hong Pao.">
+          <figcaption>Plaat I · Atlas van de theepot</figcaption>
+        </figure>
+        <div class="plaat-naast">
+          <ul class="potten">
+            <li><strong>Glazen pot</strong> voor Ali Shan. Je ziet het blad openen.</li>
+            <li><strong>Gaiwan</strong> voor Tie Guan Yin. Korte infusies, volle controle.</li>
+            <li><strong>Yixing-pot</strong> voor Dong Ding. Ongeglazuurde klei die de smaak opneemt.</li>
+            <li><strong>Tetsubin</strong> voor Da Hong Pao. Gietijzer houdt het water heet en rond.</li>
+          </ul>
+          <figure class="plaat plaat-klein">
+            <img src="img/kaart-herkomst.png" width="900" height="977" loading="lazy"
+                 alt="Schematische kaart van Fujian en Taiwan met de herkomst van de vier oolongs: Wuyi, Anxi, Lugu en Alishan.">
+            <figcaption>Plaat II · Waar de zaken beginnen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. INSCHRIJVEN -->
+    <section class="inschrijven" id="inschrijven" aria-labelledby="inschrijven-titel">
+      <div class="inschrijven-tekst">
+        <h2 id="inschrijven-titel">Word mede-onderzoeker.</h2>
+        <p>Eén keer per maand een veldnotitie over één oolong. Geen aanbiedingen, geen haast.</p>
+        <ul class="ontvang">
+          <li>Het eerste dossier, meteen na je inschrijving.</li>
+          <li>Eén veldnotitie per maand: herkomst, bereiding, bevindingen.</li>
+          <li>Als eerste toegang tot de vier oolongs.</li>
+        </ul>
+      </div>
+      <div class="formulierkaart">
+        <!-- MailerLite: ingebed formulier "Newsletter sign-up" (naam, e-mail, opt-in, dubbele opt-in) -->
+        <div class="ml-embedded" data-form="e7yFLC">
+          <p class="laden">Het inschrijfformulier wordt geladen. Verschijnt het niet? <a href="https://preview.mailerlite.io/forms/2752408/202656128395380202/share">Open het formulier in een nieuw venster</a>.</p>
+        </div>
+        <p class="klein">We gebruiken je naam en e-mailadres enkel voor de veldnotities. Je bevestigt je inschrijving via de mail die je ontvangt, en je kunt je altijd met één klik uitschrijven.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer class="voet">
+    <div class="voet-merk">
+      <p class="voet-naam">Basil Hargrove</p>
+      <p>Onderzochte oolong · Londen · Veldnotities sinds 2026</p>
+    </div>
+    <div id="privacy">
+      <h2 class="voet-kop">Privacy</h2>
+      <p>Je naam en e-mailadres worden enkel gebruikt om je de veldnotities te sturen, via MailerLite (EU). Je kunt je op elk moment uitschrijven via de link onderaan elke mail. Je gegevens worden niet gedeeld of verkocht.</p>
+    </div>
+    <div>
+      <h2 class="voet-kop">Over deze pagina</h2>
+      <p>Basil Hargrove is een fictief merk, gemaakt voor de eindopdracht Creative Automation (Arteveldehogeschool, 2026). Teksten en een deel van de beelden zijn gemaakt met behulp van AI (Claude, Adobe Firefly / Figma Weave) en daarna door de student geselecteerd en nagekeken. Productfoto's: aangeleverd lesmateriaal, bewerkt.</p>
+    </div>
+  </footer>
+
+  <!-- MailerLite Universal (laadt het ingebedde formulier) -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2752408');
+  </script>
+</body>
+</html>
